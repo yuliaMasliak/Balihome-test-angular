@@ -1,7 +1,17 @@
+<div
+  class="error-notification"
+  *ngIf="requestError"
+>
+  {{ errorMessage }}
+</div>
 <mat-form-field class="example-full-width">
   <input
     matInput
-    placeholder="Enter request"
+    placeholder="Start entering the request"
+    [(ngModel)]="searchValue"
+    (ngModelChange)="handleSearch()"
   />
+  <mat-error *ngIf="requestError">
+    {{ errorMessage }}
+  </mat-error>
 </mat-form-field>
-<button mat-raised-button>Basic</button>

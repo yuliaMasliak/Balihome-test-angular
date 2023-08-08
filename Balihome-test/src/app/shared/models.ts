@@ -18,3 +18,9 @@ export type User = {
   type: string;
   site_admin: boolean;
 };
+
+export type UsersResponse = {
+  incomplete_results: boolean;
+  items: User[];
+  total_count: number;
+};

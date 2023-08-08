@@ -13,6 +13,5 @@ export class UsersService {
   constructor() {}
   saveUsersInService(users: User[]) {
     this.usersSubject.next(users);
-    console.log(this.usersSubject.getValue());
   }
 }

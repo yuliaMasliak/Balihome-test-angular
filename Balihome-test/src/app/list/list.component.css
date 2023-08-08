@@ -1,5 +1,6 @@
 .list {
   width: 100%;
+  margin-top: 50px;
 }
 
 .list-item {
@@ -12,4 +13,6 @@
 .list-item_img,
 .list-item_login {
   width: 50%;
+  border: 0.5px solid grey;
+  text-align: center;
 }
