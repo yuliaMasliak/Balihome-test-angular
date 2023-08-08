@@ -1,0 +1,15 @@
+.list {
+  width: 100%;
+}
+
+.list-item {
+  display: flex;
+  width: 100%;
+}
+.list-item img {
+  max-width: 40px;
+}
+.list-item_img,
+.list-item_login {
+  width: 50%;
+}
