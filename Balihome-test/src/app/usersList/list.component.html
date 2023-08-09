@@ -1,10 +1,12 @@
 <div class="list">
-  <div>Users</div>
+  <h3>Users</h3>
+
   <div
     (click)="searchRepos($event)"
-    *ngFor="let user of users"
+    *ngFor="let user of users; let index = index"
     class="list-item"
-    ><div class="list-item_img"> <img src="{{ user.avatar_url }}" /></div>
+    ><div class="list-item_counter">{{ index + 1 }}</div>
+    <div class="list-item_img"> <img src="{{ user.avatar_url }}" /></div>
     <div class="list-item_login">{{ user.login }}</div>
   </div>
 </div>

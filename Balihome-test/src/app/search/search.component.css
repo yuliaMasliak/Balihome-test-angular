@@ -1,6 +1,7 @@
 .mat-error {
   color: red;
 }
-input {
+mat-form-field {
+  display: flex;
   width: 100%;
 }

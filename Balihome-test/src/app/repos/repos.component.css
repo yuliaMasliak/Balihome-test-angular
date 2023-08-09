@@ -9,8 +9,18 @@
 }
 
 .list-item_name,
-.list-item_desc {
+.list-item_desc,
+.list-item_count {
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   width: 50%;
-  border: 0.5px solid grey;
+  border: 0.5px dashed rgb(190, 180, 180);
   text-align: center;
+  cursor: pointer;
+}
+.list-item_count {
+  width: 5%;
+  justify-content: center;
 }

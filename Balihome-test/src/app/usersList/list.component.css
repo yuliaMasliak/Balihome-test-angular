@@ -1,6 +1,7 @@
 .list {
   width: 100%;
   margin-top: 50px;
+  border-radius: 4px;
 }
 
 .list-item {
@@ -8,11 +9,21 @@
   width: 100%;
 }
 .list-item img {
-  max-width: 40px;
+  max-width: 50px;
+  border-radius: 4px;
 }
 .list-item_img,
-.list-item_login {
+.list-item_login,
+.list-item_counter {
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50%;
-  border: 0.5px solid grey;
+  border: 0.5px dashed rgb(190, 180, 180);
   text-align: center;
+  cursor: pointer;
+}
+.list-item_counter {
+  width: 5%;
 }

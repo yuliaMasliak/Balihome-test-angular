@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class UsersService {
   userName: string = '';
+  repo: any;
   private usersSubject = new BehaviorSubject<User[]>([]);
   users$ = this.usersSubject.asObservable();
 

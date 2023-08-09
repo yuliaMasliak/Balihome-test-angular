@@ -17,6 +17,10 @@ import {
 } from '@angular/material/core';
 import { MainComponent } from './main/main.component';
 import { ReposComponent } from './repos/repos.component';
+import { ModalComponent } from './modal/modal.component';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { SharedModule } from './shared/shared.module';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ import { ReposComponent } from './repos/repos.component';
     SearchComponent,
     ListComponent,
     MainComponent,
-    ReposComponent
+    ReposComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,10 @@ import { ReposComponent } from './repos/repos.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatListModule,
-    HttpClientModule
+    HttpClientModule,
+    MdbModalModule,
+    SharedModule,
+    MatIconModule
   ],
   providers: [
     { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }

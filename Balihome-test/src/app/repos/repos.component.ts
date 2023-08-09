@@ -1,7 +1,11 @@
+import { ModalComponent } from '../modal/modal.component';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from '../shared/users.service';
 import { HttpClient } from '@angular/common/http';
+import { EventEmitter } from '@angular/core';
+import { Output } from '@angular/core';
 
 @Component({
   selector: 'app-repos',
@@ -10,12 +14,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ReposComponent implements OnInit {
   repos: any = [];
-  modal: boolean = false;
+  modalRef: MdbModalRef<ModalComponent> | null = null;
+  @Output() openedRepo = new EventEmitter();
   constructor(
     private usersService: UsersService,
     private router: Router,
     private route: ActivatedRoute,
-    private http: HttpClient
+    private http: HttpClient,
+    private modalService: MdbModalService
   ) {}
 
   ngOnInit(): void {
@@ -35,16 +41,15 @@ export class ReposComponent implements OnInit {
       .subscribe(
         (repos) => {
           this.repos = [...repos];
-          console.log(this.repos);
         },
         (error) => {
           console.log(error.message);
         }
       );
   }
-  showRepoDetails(event: Event) {
-    console.log(event.target);
 
-    this.modal = true;
+  openModal(repo: any) {
+    this.modalRef = this.modalService.open(ModalComponent);
+    this.usersService.repo = repo;
   }
 }
