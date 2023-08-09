@@ -1,17 +1,10 @@
-<div
-  class="error-notification"
-  *ngIf="requestError"
->
-  {{ errorMessage }}
-</div>
-<mat-form-field class="example-full-width">
+<mat-error *ngIf="requestError"> {{ errorMessage }}</mat-error>
+<mat-form-field [color]="colorMappings[inputUnderlineColor]">
   <input
     matInput
+    class="{{ errorClass }}"
     placeholder="Start entering the request"
     [(ngModel)]="searchValue"
     (ngModelChange)="handleSearch()"
   />
-  <mat-error *ngIf="requestError">
-    {{ errorMessage }}
-  </mat-error>
 </mat-form-field>

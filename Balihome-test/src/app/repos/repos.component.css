@@ -1,0 +1,16 @@
+.list {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.list-items {
+  display: flex;
+  width: 100%;
+}
+
+.list-item_name,
+.list-item_desc {
+  width: 50%;
+  border: 0.5px solid grey;
+  text-align: center;
+}

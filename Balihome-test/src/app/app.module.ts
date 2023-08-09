@@ -8,12 +8,24 @@ import { SearchComponent } from './search/search.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
-import { ListComponent } from './list/list.component';
+import { ListComponent } from './usersList/list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatListModule } from '@angular/material/list';
+import {
+  ErrorStateMatcher,
+  ShowOnDirtyErrorStateMatcher
+} from '@angular/material/core';
+import { MainComponent } from './main/main.component';
+import { ReposComponent } from './repos/repos.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchComponent, ListComponent],
+  declarations: [
+    AppComponent,
+    SearchComponent,
+    ListComponent,
+    MainComponent,
+    ReposComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,7 +37,9 @@ import { MatListModule } from '@angular/material/list';
     MatListModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

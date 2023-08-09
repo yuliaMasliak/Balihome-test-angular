@@ -1,6 +1,6 @@
-.example-full-width {
-  width: 100%;
-}
-.error-notification {
+.mat-error {
   color: red;
+}
+input {
+  width: 100%;
 }
